@@ -7,7 +7,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigInteger;
+import java.time.LocalDateTime;
 import java.util.Date;
+
+import static java.sql.Timestamp.valueOf;
 
 @Entity
 @Table(name = "GENERAL")
@@ -41,4 +44,11 @@ public class General
     @Column( name = "DEL_YN")
     private Common delYn;
 
+    public void changeGeneral( UserId userId, BigInteger budget )
+    {
+        this.userId = userId;
+        this.budget = budget;
+        this.modDate = valueOf(LocalDateTime.now());
+        this.modId = userId;
+    }
 }
