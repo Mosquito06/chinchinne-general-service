@@ -2,6 +2,7 @@ package com.chinchinne.generalservice.controller;
 
 import com.chinchinne.generalservice.annotation.GeneralTest;
 import com.chinchinne.generalservice.repository.GeneralRepository;
+import com.chinchinne.generalservice.service.GeneralService;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class GeneralControllerTest
 //    @MockBean
 //    ModelMapper modelMapper;
 //
+    @MockBean
+    GeneralService generalService;
+
     @MockBean
     GeneralRepository generalRepository;
 
